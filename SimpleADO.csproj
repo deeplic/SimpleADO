@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>SimpleADO.SqlServer</PackageId>
+    <Description>Simplifies ADO.NET with just four methods:
+SelectQuery method = for reading(select) data from database,
+CUDQuery method = for creating(insert), update and delete data from database,
+CountQuery method= counts data retrieved from database using select command,
+ReaderQuery method=ReaderQuery method if for reading data from database and put it to SqlDataReader.
+	</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Company>EasyLearn Technologies</Company>
+    <Product>SimpleADO.SqlServer</Product>
+    <Authors>Linda Mazibuko</Authors>
+    <PackageIcon>EasyLearn_Logo_white_-removebg-preview.png</PackageIcon>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Downloads\EasyLearn_Logo_white_-removebg-preview.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
