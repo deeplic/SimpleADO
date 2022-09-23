@@ -35,7 +35,7 @@ namespace SimpleADO
             return dt;
         }
         /// <summary>
-        /// This class will return void for delete,update and insert sql commands or queries
+        /// This method will return void for delete,update and insert sql commands or queries
         /// </summary>
         /// <param name="conStringName">Database connection string</param>
         /// <param name="query">Sql query text</param>
