@@ -15,7 +15,7 @@ namespace SimpleADO
         /// <param name="query">Sql query text</param>
         /// <param name="queryparams">Query parameters</param>
         /// <returns>DataTable for the specified SQL select query</returns>
-        public async Task<DataTable> SelectQueryAsync(string conStringName, string query, string[] queryparams)
+        public static DataTable SelectQuery(string conStringName, string query, string[] queryparams)
         {
             string conStr = ConfigurationManager.ConnectionStrings[conStringName].ConnectionString;
             SqlConnection con = new SqlConnection(conStr);
@@ -30,7 +30,7 @@ namespace SimpleADO
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            await Task.Run(()=>da.Fill(dt));
+            da.Fill(dt);
             con.Close();
             return dt;
         }
@@ -40,7 +40,7 @@ namespace SimpleADO
         /// <param name="conStringName">Database connection string</param>
         /// <param name="query">Sql query text</param>
         /// <param name="queryparams">Query parameters</param>
-        public void CUDQuery(string conStringName, string query, string[] queryparams)
+        public static void CUDQuery(string conStringName, string query, string[] queryparams)
         {
 
             string conStr = ConfigurationManager.ConnectionStrings[conStringName].ConnectionString;
@@ -64,7 +64,7 @@ namespace SimpleADO
         /// <param name="query">Sql query text</param>
         /// <param name="queryparams">Query parameters</param>
         /// <returns>SqlConnection Connection and SqlDataReader Reader (both opened)</returns>
-        public ReadearReturn ReaderQuery(string conStringName, string query, string[] queryparams)
+        public static ReadearReturn ReaderQuery(string conStringName, string query, string[] queryparams)
         {
             string conStr = ConfigurationManager.ConnectionStrings[conStringName].ConnectionString;
             SqlConnection con = new SqlConnection(conStr);
@@ -100,7 +100,7 @@ namespace SimpleADO
         /// <param name="query">Sql query text</param>
         /// <param name="queryparams">Query parameters</param>
         /// <returns><c>int</c> number of data entries</returns>
-        public int CountQuery(string conStringName, string query, string[] queryparams)
+        public static int CountQuery(string conStringName, string query, string[] queryparams)
         {
             string conStr = ConfigurationManager.ConnectionStrings[conStringName].ConnectionString;
             SqlConnection con = new SqlConnection(conStr);
